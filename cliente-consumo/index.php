@@ -1,11 +1,4 @@
-<?php
-//consumiendo nuestro webservice para obtener el conjunto de datos
-$url = "http://127.0.0.1:8000/api/list";
-$client = curl_init($url);
-curl_setopt($client, CURLOPT_RETURNTRANSFER, true);
-$response = curl_exec($client);
-$result = json_decode($response);
-?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -68,27 +61,7 @@ $result = json_decode($response);
                         </tr>
                     </thead>
                     <tbody>
-                        <?php
-
-                        $tabla = "";
-                        foreach ($result as $row) {
-
-                            $tabla .= <<<TABLA
-                            <tr>
-                            <td class="text-center">$row->id</td>
-                            <td class="text-center">$row->nombre</td>
-                            <td class="text-center">$row->apellidos</td>
-                            <td class="text-center">$row->edad</td>
-                            <td class="text-center">$ $row->salario</td>
-                            <td class="text-center">
-                            <a href="editar.php?user_id=$row->id" class="btn btn-success">Modificar</a>
-                            <a href="eliminar.php?user_id=$row->id" class="btn btn-danger">Eliminar</a>
-                            </td>
-                            </tr>
-                            TABLA;
-                        }
-                        echo $tabla;
-                        ?>
+                       
                     </tbody>
                 </table>
             </div>

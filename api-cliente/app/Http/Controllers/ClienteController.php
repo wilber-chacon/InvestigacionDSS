@@ -24,10 +24,7 @@ class ClienteController extends Controller
     }
 
 
-    public function list(){
-
-        return Cliente::all();
-    }
+ 
 
 
 }
