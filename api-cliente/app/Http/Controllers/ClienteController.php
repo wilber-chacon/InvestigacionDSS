@@ -20,10 +20,14 @@ class ClienteController extends Controller
         $cliente->edad = $request->input('edad');
         $cliente->salario = $request->input('salario');
         $cliente->save();
-        return json_encode(['msg' => 'Cliente agregado exitosamente.']); 
+        return json_encode(['msg' => 'Exito']); 
     }
 
 
+    public function list(){
+
+        return Cliente::all();
+    }
 
 
 }

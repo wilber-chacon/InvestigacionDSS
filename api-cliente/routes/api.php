@@ -21,4 +21,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 //Servicio para crear nuevo cliente utilizando la operación POST
-Route::post('/cliente', [ClienteController::class, 'create']);
+Route::post('/insert', [ClienteController::class, 'create']);
+
+Route::get('/list', [ClienteController::class, 'list']);
